@@ -10,3 +10,73 @@ body {
     height: 100vh;
 }
 
+.check {
+    margin-right: 60px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+    padding: 20px;
+}
+
+
+form .form-element {
+    margin: 15px auto;
+}
+
+form .form-element label{
+    font-size: 14px;
+    color: #222;
+    position: absolute;
+    left: 610px;
+    transform: translateY(5px);
+    transition: 150ms ease;
+}
+
+form .form-element input {
+    border: 1px solid #222;
+    border-radius: 1rem;
+    padding: 5px;
+    line-height: 1.5;
+    width: 200px;
+}
+
+form .form-element input:focus {
+    outline: none;
+    border: solid 1.5px #023cdd;
+}
+
+form .form-element input:focus ~ label {
+    transform: translateY(-50%) scale(0.8);
+    background-color:#222;
+    color: #64ffda;
+}
+
+
+
+.books-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    background-color: aqua;
+}
+
+.books-container > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 20px;
+    padding: 10px;
+}
