@@ -55,7 +55,7 @@ form .form-element input {
 
 form .form-element input:focus {
     outline: none;
-    border: solid 1.5px #023cdd;
+    border: solid 1.5px #64ffda;
 }
 
 form .form-element input:focus ~ label {
