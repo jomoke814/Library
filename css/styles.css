@@ -10,6 +10,11 @@ body {
     height: 100vh;
 }
 
+h1 {
+    font-size: 18px;
+    margin-right: 150px;
+}
+
 .check {
     margin-right: 60px;
 }
@@ -71,10 +76,10 @@ form .form-element input:focus ~ label {
     flex-direction: row;
     margin: 10px;
     padding: 10px;
-    background-color: aqua;
 }
 
-.books-container > div {
+.books-container .card {
+    background-color: aqua;
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
     gap: 20px;
