@@ -1,20 +1,8 @@
-let myLibrary = [
-    // {   
-    //     Title: 'Learn Enough Command line',
-    //     Author: 'Micheal Hurt',
-    //     Pages: 205
-    // },
-    // {
-    //     Title: 'The Art of Micro Frontend',
-    //     Author: 'Florian Rappl',
-    //     Pages: 300
-    // },
-    // {
-    //     Title: 'Think like a Programmer',
-    //     Author: 'Anton Spraul',
-    //     Pages: 350
-    // }
-];
+const addBookButton = document.querySelector('.add-book-btn')
+const submitButton = document.querySelector('.submit-btn')
+const clearButton = document.querySelector('.reset-btn')
+
+let myLibrary = [];
 
 //Constructor
 function Book (Title, Author, Pages, Read) {
@@ -31,11 +19,18 @@ function Book (Title, Author, Pages, Read) {
 function addBookToLibrary (Title, Author, Pages, Read) {
     let book = new Book(Title, Author, Pages, Read)
         myLibrary.push(book);
+        displayBooks();
 }
 
 // function to display books
 function displayBooks() {
     const books = document.querySelector(".books-container");
+    const removeDivs = document.querySelectorAll('.card');
+
+    for(let i = 0; i < removeDivs.length; i++) {
+        removeDivs[i].remove();
+    }
+
     myLibrary.forEach(myLibrary => {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -48,19 +43,36 @@ function displayBooks() {
     })
 }
 
-const addBookButton = document.querySelector('.add-book-btn')
-
 addBookButton.addEventListener("click", () => {
     document.getElementById("add-book-form").style.display = "block";
 })
 
+submitButton.addEventListener("click", () => {
+    let Title = document.getElementById('Title').value;
+    let Author = document.getElementById('Author').value;
+    let Pages = document.getElementById('Pages').value;
+    let Read = document.getElementById('Read').value;
+
+    if((Title == "") || (Author == "") || (Pages == "") || (Read == "")) {
+        return;
+    }
+
+    addBookToLibrary(Title, Author, Pages, Read);
+
+    document.getElementById('book-form').reset();
+})
+
+clearButton.addEventListener("click", () => {
+    document.getElementById('book-form').reset();
+}) 
+
 
 
 // call function and adding books manually
-addBookToLibrary('Learn Enough Command line', 'Micheal Hurt', '205 Pages', 'Read');
-addBookToLibrary('The Art of Micro Frontend', 'Florian Rappl', '300 Pages', 'Not Yet Read');
-addBookToLibrary('Learn Enough Text Editor To be Dangerous', 'Micheal Hurt', '250 Pages', 'Read');
-addBookToLibrary('Learn Enough GIT to be Dangerous', 'Micheal Hurt', '230 Pages', 'Read')
+// addBookToLibrary('Learn Enough Command line', 'Micheal Hurt', '205 Pages', 'Read');
+// addBookToLibrary('The Art of Micro Frontend', 'Florian Rappl', '300 Pages', 'Not Yet Read');
+// addBookToLibrary('Learn Enough Text Editor To be Dangerous', 'Micheal Hurt', '250 Pages', 'Read');
+// addBookToLibrary('Learn Enough GIT to be Dangerous', 'Micheal Hurt', '230 Pages', 'Read')
 
-console.log('End of Library List');
-displayBooks();
+// console.log('End of Library List');
+// displayBooks();

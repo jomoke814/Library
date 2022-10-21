@@ -21,23 +21,23 @@
                 <form action="#" id="book-form">
                     <div class="form-element">
                         <label for="Title">Title</label>
-                        <input type="text" name="Title" id="title">
+                        <input type="text" name="Title" id="Title" required>
                     </div>
                     <div class="form-element">
                         <label for="Author">Author</label>
-                        <input type="text" name="Author" id="author">
+                        <input type="text" name="Author" id="Author" required>
                     </div>
                     <div class="form-element">
                         <label for="Pages">Pages</label>
-                        <input type="number" name="Pages" id="pages">
+                        <input type="number" name="Pages" id="Pages" required>
                     </div>
                     <div class="form-element">
                         <label for="Read">Read</label>
-                        <input type="text" name="Read" id="read" class="check">
+                        <input type="text" name="Read" id="Read" class="check" required>
                     </div>
                     <div class="btn">
-                        <button>Remove</button>
-                        <button>Reset</button>
+                        <button type="submit" class="submit-btn">Submit</button>
+                        <button type="reset" class="reset-btn">Reset</button>
                     </div>
                 </form>
             </div>

@@ -89,6 +89,7 @@ form .form-element label {
     margin: 5px;
     padding: 10px;
     gap: 10px;
+    /* min-height: 100vh; */
 }
 
 .books-container .card {
