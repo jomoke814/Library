@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,6 +9,7 @@
 body {
     background-image: url('../images/janko-ferlic-sfL_QOnmy00-unsplash.jpg');
     background-size: contain;
+    font-family: 'Outfit', sans-serif;
     height: 100vh;
 }
 
@@ -32,10 +35,23 @@ header {
     padding: 20px;
 }
 
+button {
+    background-color: #53efd8;
+    color: hsl(216, 50%, 16%);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+
 .form {
     grid-column: 1/2;
     justify-self: center;
     align-items: center;
+}
+
+#add-book-form {
+    display: none;
 }
 
 form .form-element {
@@ -59,6 +75,11 @@ form .form-element label {
     color: #e5e5e5;
 }
 
+.btn {
+    display: flex;
+    justify-content: space-between;
+}
+
 .books-container {
     background-color: hsl(217, 54%, 11%);
     border-radius: 10px;
@@ -76,7 +97,6 @@ form .form-element label {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    width: 250px;
     gap: 20px;
     padding: 20px;
 }
