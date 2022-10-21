@@ -48,6 +48,13 @@ function displayBooks() {
     })
 }
 
+const addBookButton = document.querySelector('.add-book-btn')
+
+addBookButton.addEventListener("click", () => {
+    document.getElementById("add-book-form").style.display = "block";
+})
+
+
 
 // call function and adding books manually
 addBookToLibrary('Learn Enough Command line', 'Micheal Hurt', '205 Pages', 'Read');
