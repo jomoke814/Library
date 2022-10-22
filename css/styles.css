@@ -44,6 +44,10 @@ button {
     outline: none;
 }
 
+.delete-btn {
+    width: 40%;
+}
+
 .form {
     grid-column: 1/2;
     justify-self: center;

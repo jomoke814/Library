@@ -31,15 +31,36 @@ function displayBooks() {
         removeDivs[i].remove();
     }
 
-    myLibrary.forEach(myLibrary => {
+    let index = 0
+    myLibrary.forEach(myLibrarys => {
         const card = document.createElement('div');
         card.classList.add('card');
         books.appendChild(card);
-        for(let key in myLibrary) {
+
+        for(let key in myLibrarys) {
             const para = document.createElement('p');
-            para.textContent = (`${key}: ${myLibrary[key]}`);
+            para.textContent = (`${key}: ${myLibrarys[key]}`);
             card.appendChild(para);
         }
+
+        //create remove button
+        const removeButton = document.createElement('button');
+        removeButton.classList.add('delete-btn');
+        removeButton.textContent = "Delete"
+
+        //link remove button with array
+        removeButton.dataset.linkedArray = index;
+        index ++;
+        card.appendChild(removeButton);
+
+        //eventlistener for remove button to delete card and remove data from array
+        removeButton.addEventListener("click", ()=> {
+            let retrieveBook = removeButton.dataset.linkedArray;
+            myLibrary.splice(parseInt(retrieveBook), 1);
+            card.remove();
+            displayBooks();
+        })
+
     })
 }
 
