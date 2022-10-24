@@ -18,6 +18,6 @@ The User should be able to:
 
 ### Links for preview
 - Live Site:
-- Solution URL:
+- Solution URL: https://github.com/jomoke814/Library
 ### Resources
 - Background Photo by 🇸🇮 Janko Ferlič on Unsplash

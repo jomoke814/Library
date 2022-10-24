@@ -10,9 +10,6 @@ function Book (Title, Author, Pages, Read) {
     this.Author = Author;
     this.Pages = Pages;
     this.Read = Read;
-    // this.info = function () {
-    //     return (title + author + ", " + pages + ", " + read);
-    // }
 }
 
 // Adding a book function
@@ -114,14 +111,3 @@ submitButton.addEventListener("click", () => {
 clearButton.addEventListener("click", () => {
     document.getElementById('book-form').reset();
 }) 
-
-
-
-// call function and adding books manually
-// addBookToLibrary('Learn Enough Command line', 'Micheal Hurt', '205 Pages', 'Read');
-// addBookToLibrary('The Art of Micro Frontend', 'Florian Rappl', '300 Pages', 'Not Yet Read');
-// addBookToLibrary('Learn Enough Text Editor To be Dangerous', 'Micheal Hurt', '250 Pages', 'Read');
-// addBookToLibrary('Learn Enough GIT to be Dangerous', 'Micheal Hurt', '230 Pages', 'Read')
-
-// console.log('End of Library List');
-// displayBooks();
