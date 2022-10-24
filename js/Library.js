@@ -37,6 +37,7 @@ function displayBooks() {
         card.classList.add('card');
         books.appendChild(card);
 
+        //looping through value to display card
         for(let key in myLibrarys) {
             const para = document.createElement('p');
             para.textContent = (`${key}: ${myLibrarys[key]}`);
@@ -50,7 +51,6 @@ function displayBooks() {
 
         //link remove button with array
         removeButton.dataset.linkedArray = index;
-        index ++;
         card.appendChild(removeButton);
 
         //eventlistener for remove button to delete card and remove data from array
@@ -61,6 +61,34 @@ function displayBooks() {
             displayBooks();
         })
 
+        //creating button to change read status
+        const readButton = document.createElement('Button');
+        readButton.classList.add('read-btn');
+        readButton.textContent = 'Toggle status';
+
+        //link read button with array data
+        readButton.dataset.linkedArray = index;
+        card.appendChild(readButton);
+
+        //create eventListener to toggle read status button
+        readButton.addEventListener('click', () => {
+            let retrieveBookToggle = readButton.dataset.linkedArray;
+            Book.prototype = Object.create(Book.prototype);
+            const toggleBook = new Book();
+
+            //checking read status
+            if ((myLibrary[parseInt(retrieveBookToggle)].Read) == 'Yes') {
+                toggleBook.Read =  'No';
+                myLibrary[parseInt(retrieveBookToggle)].Read = toggleBook.Read; 
+            } else if ((myLibrary[parseInt(retrieveBookToggle)].Read) == 'No') {
+                toggleBook.Read = 'Yes';
+                myLibrary[parseInt(retrieveBookToggle)].Read = toggleBook.Read;
+            }
+            displayBooks();
+        })
+
+
+    index ++;
     })
 }
 

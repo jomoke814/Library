@@ -44,7 +44,7 @@ button {
     outline: none;
 }
 
-.delete-btn {
+.delete-btn, .read-btn {
     width: 40%;
 }
 
