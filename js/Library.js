@@ -4,15 +4,22 @@ const clearButton = document.querySelector('.reset-btn')
 
 let myLibrary = [];
 
-//Constructor
-//changes back to constructor due to error read-only
-function Book(Title, Author, Pages, Read) {
-    this.Title =  Title;
-    this.Author = Author;
-    this.Pages = Pages;
-    this.Read = Read;
+//class
+class Book {
+    constructor(Title, Author, Pages, Read) {
+        this.Title = Title;
+        this.Author = Author;
+        this.Pages = Pages;
+        this.Read = Read;
+    }
 }
-    
+//Constructor
+// function Book(Title, Author, Pages, Read) {
+//     this.Title =  Title;
+//     this.Author = Author;
+//     this.Pages = Pages;
+//     this.Read = Read;
+// }
 
 
 // Adding a book function
@@ -80,7 +87,7 @@ class UI {
             //create eventListener to toggle read status button
             readButton.addEventListener('click', () => {
                 let retrieveBookToggle = readButton.dataset.linkedArray;
-                Book.prototype = Object.create(Book.prototype);
+                Book.prototype.constructor = Object.create(Book.prototype);
                 const toggleBook = new Book();
     
                 //checking read status
