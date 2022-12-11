@@ -4,15 +4,16 @@ const clearButton = document.querySelector('.reset-btn')
 
 let myLibrary = [];
 
-//Class
-class Book {
-    constructor(Title, Author, Pages, Read) {
-        this.Title =  Title;
-        this.Author = Author;
-        this.Pages = Pages;
-        this.Read = Read;
-    }
+//Constructor
+//changes back to constructor due to error read-only
+function Book(Title, Author, Pages, Read) {
+    this.Title =  Title;
+    this.Author = Author;
+    this.Pages = Pages;
+    this.Read = Read;
 }
+    
+
 
 // Adding a book function
 // const addBookToLibrary = (Title, Author, Pages, Read) {
@@ -23,7 +24,11 @@ class Book {
 
 // function to display books
 class UI {
-   
+    static addBookToLibrary (Title, Author, Pages, Read) {
+        let book = new Book(Title, Author, Pages, Read)
+            myLibrary.push(book);
+            UI.displayBooks();
+    }
 
     static displayBooks() {
         const books = document.querySelector(".books-container");
@@ -60,7 +65,7 @@ class UI {
                 let retrieveBook = removeButton.dataset.linkedArray;
                 myLibrary.splice(parseInt(retrieveBook), 1);
                 card.remove();
-                displayBooks();
+                UI.displayBooks();
             })
     
             //creating button to change read status
@@ -86,18 +91,12 @@ class UI {
                     toggleBook.Read = 'Yes';
                     myLibrary[parseInt(retrieveBookToggle)].Read = toggleBook.Read;
                 }
-                displayBooks();
+                UI.displayBooks();
             })
     
     
         index ++;
         })
-    }
-
-    static addBookToLibrary (Title, Author, Pages, Read) {
-        let book = new Book(Title, Author, Pages, Read)
-            myLibrary.push(book);
-            UI.displayBooks();
     }
 }
 
