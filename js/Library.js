@@ -13,23 +13,8 @@ class Book {
         this.Read = Read;
     }
 }
-//Constructor
-// function Book(Title, Author, Pages, Read) {
-//     this.Title =  Title;
-//     this.Author = Author;
-//     this.Pages = Pages;
-//     this.Read = Read;
-// }
 
-
-// Adding a book function
-// const addBookToLibrary = (Title, Author, Pages, Read) {
-//     let book = new Book(Title, Author, Pages, Read)
-//         myLibrary.push(book);
-//         displayBooks();
-// }
-
-// function to display books
+// class to display books
 class UI {
     static addBookToLibrary (Title, Author, Pages, Read) {
         let book = new Book(Title, Author, Pages, Read)
